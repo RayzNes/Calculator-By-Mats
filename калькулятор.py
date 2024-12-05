@@ -1,4 +1,6 @@
 import math
+import random
+
 print("""
   _    _      _ _       
  | |  | |    | | |      
@@ -27,6 +29,9 @@ def main():
         Что бы найти синус, косинус или тангенс введите 14;
         Что бы вывести число e с точностью до 16 чисел введите 15;
         Что бы найти арксинус, арккосинус и арктангенс введите 16;
+        Что бы показывать сколькими способами можно выбрать объектов из набора введите 17;
+        Что бы вычислить факториал введите 18;
+        Что бы перейти в режим рандомайзера введите 19;
         для информации введите инфо."""
         print(multiline_string)
         otvet = input().lower()
@@ -73,6 +78,12 @@ def main():
             print(f"Число е = {math.e}")
         elif otvet == "16":
             arcsinus()
+        elif otvet == "17":
+            set()
+        elif otvet == "18":
+            factorial()
+        elif otvet == "19":
+            randomai()
         elif otvet in["Бакунята"]:
             print("збозйпа со огтйфоцйю бозхолго!")
         else:
@@ -87,7 +98,7 @@ def info():
                        
                        """)
     print("Calculator by Mats")
-    print('Версия: 1.3.8  от 05.12.24')
+    print('Версия: 1.3.9  от 05.12.24')
     print("Версия Python: 3.13.0")
     print("Последнее обновления курса: 02.12.24")
 def base():
@@ -407,6 +418,25 @@ def arcsinus():
                 print("Неверный ввод")
         else:
             print("Вы не выбрали!")
-
+def set():
+    try:
+        k = int(input("Введите сколько объектов:"))
+        fak = int(input("Сколько нужно взять:"))
+        print(f"Существует способов: {math.comb(k,fak)}")
+    except ValueError:
+        print("Неверный ввод")
+def factorial():
+    try:
+        nert = int(input("Введите число:"))
+        print(math.factorial(nert))
+    except ValueError:
+        print("Неверный ввод")
+def randomai():
+    miny = int(input("Введите минимальный порог:"))
+    maxy= int(input("Введите максимальный порог:"))
+    hhru = int(input("Сколько чисел надос сгенерировать:"))
+    for _ in range(hhru):
+        num =  random.randint(miny,maxy)
+        print(num)
 main()
         
